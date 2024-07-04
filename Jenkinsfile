@@ -1,10 +1,9 @@
 pipeline {
   agent any
-  stages { 
-    
+  stages {
     stage('OWASP DependencyCheck') {
       steps {
-        dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+        dependencyCheck additionalArguments: '--format HTML --format XML --noupdate', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
       }
     }
   }  
